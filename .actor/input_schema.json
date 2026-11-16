@@ -1,0 +1,74 @@
+{
+  "title": "FanDuel data",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "apiKey": {
+      "title": "fanduelapi.com API key",
+      "type": "string",
+      "editor": "textfield",
+      "isSecret": true,
+      "description": "Your own key. Free (no card): https://fanduelapi.com/sign-up?utm_source=apify&utm_medium=actor&utm_campaign=fanduel-scraper. Leave empty to use the keyless feed."
+    },
+    "endpoint": {
+      "title": "What to read",
+      "type": "string",
+      "editor": "select",
+      "default": "props",
+      "enum": [
+        "props",
+        "odds",
+        "changes",
+        "futures",
+        "ev",
+        "arbitrage",
+        "sample"
+      ],
+      "enumTitles": [
+        "Player props (key)",
+        "Game lines: moneyline, spread, total (key)",
+        "Change feed: every line move (key)",
+        "Futures (key)",
+        "+EV prices (key)",
+        "Arbitrage pairs (key)",
+        "Sample props, no key (up to 10 real props, delayed)"
+      ]
+    },
+    "league": {
+      "title": "League",
+      "type": "string",
+      "editor": "textfield",
+      "default": "nba",
+      "description": "For example NBA, NFL, NHL, MLB, CFB. Leave empty for every league the endpoint supports."
+    },
+    "limit": {
+      "title": "Rows per page",
+      "type": "integer",
+      "default": 100,
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "maxPages": {
+      "title": "Max pages",
+      "type": "integer",
+      "default": 1,
+      "minimum": 1,
+      "maximum": 100,
+      "description": "Each page spends API credits on your own plan. 1 page keeps a run cheap."
+    },
+    "maxItems": {
+      "title": "Max rows",
+      "type": "integer",
+      "minimum": 1,
+      "description": "Stop after this many rows."
+    },
+    "extraParams": {
+      "title": "Extra query parameters",
+      "type": "object",
+      "editor": "json",
+      "prefill": {},
+      "description": "Passed straight to the API, for example {\"stat\": \"points\"}. See https://fanduelapi.com/docs?utm_source=apify&utm_medium=actor&utm_campaign=fanduel-scraper"
+    }
+  },
+  "required": []
+}

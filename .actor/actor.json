@@ -1,0 +1,17 @@
+{
+  "actorSpecification": 1,
+  "name": "fanduel-scraper",
+  "title": "FanDuel Scraper (player props, odds, line moves)",
+  "version": "0.1",
+  "description": "FanDuel Sportsbook player props, game lines, futures, line moves, +EV and arbitrage, as a dataset. Reads the documented fanduelapi.com API with your own key; works without a key on the keyless feed.",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Rows",
+      "views": {}
+    }
+  }
+}
